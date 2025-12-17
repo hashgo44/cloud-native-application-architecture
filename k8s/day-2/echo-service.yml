@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-service
+  labels:
+    app: echo-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo-service
+  template:
+    metadata:
+      labels:
+        app: echo-service
+    spec:
+      containers:
+        - name: echo-service
+          image: echo-service:dev
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_NAME
+              value: "echo-service"
+            - name: APP_VERSION
+              value: "dev"
+            - name: FEATURE_FLAG_X
+              value: "off"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: echo-service
+  labels:
+    app: echo-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: echo-service
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
