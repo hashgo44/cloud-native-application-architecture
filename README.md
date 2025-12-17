@@ -126,6 +126,7 @@ You are expected to:
 * Containers and immutability
 * Local Kubernetes installation and setup
 * First containerized service
+* Service-to-service communication
 
 ---
 

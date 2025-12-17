@@ -1,4 +1,4 @@
-# Local Environnement Setup (Important)
+# Local Environment Setup (Important)
 
 Before moving forward, we must ensure that **everyone has a working local environment**.
 All the following steps are prerequisites for the rest of the module.
@@ -8,7 +8,7 @@ Small issues here will become major blockers later.
 
 ---
 
-### 1. Container Runtime
+## 1. Container Runtime
 
 You need a **working container runtime**.
 
@@ -18,7 +18,7 @@ Supported options:
 * **Docker Engine** (Linux)
 * **Podman** (advanced users only)
 
-#### Verify installation
+### Verify installation
 
 Run:
 
@@ -40,11 +40,11 @@ If this command fails:
 
 ---
 
-### 2. `kubectl` (Kubernetes CLI)
+## 2. `kubectl` (Kubernetes CLI)
 
 `kubectl` is the command-line tool used to interact with Kubernetes clusters.
 
-#### Verify installation
+### Verify installation
 
 ```bash
 kubectl version --client
@@ -64,7 +64,7 @@ If `kubectl` is missing, install it using the **official Kubernetes documentatio
 
 ---
 
-### 3. `kind` (Kubernetes IN Docker)
+## 3. `kind` (Kubernetes IN Docker)
 
 We use **kind** to run Kubernetes locally inside containers.
 
@@ -75,7 +75,7 @@ Why `kind`:
 * close to real Kubernetes behavior
 * well suited for local development and teaching
 
-#### Verify installation
+### Verify installation
 
 ```bash
 kind version
@@ -95,7 +95,7 @@ kind version
 
 ---
 
-### 4. Creating the Local Kubernetes Cluster
+## 4. Creating the Local Kubernetes Cluster
 
 Each student will run **their own local Kubernetes cluster**.
 
@@ -111,7 +111,7 @@ kind create cluster
 
 ---
 
-### 5. Verify the Cluster Is Working
+## 5. Verify the Cluster Is Working
 
 Run:
 
@@ -139,7 +139,7 @@ If the node is **not Ready**:
 
 ---
 
-### 6. Common Problems (Read This)
+## 6. Common Problems (Read This)
 
 Some issues are **very common**:
 
@@ -156,7 +156,7 @@ If something behaves strangely:
 
 ---
 
-### 7. Final Checkpoint (Mandatory)
+## 7. Final Checkpoint (Mandatory)
 
 Before continuing, you must be able to run **all three commands successfully**:
 
@@ -175,6 +175,4 @@ If any of these fail:
 Cloud native systems assume unstable environments.
 Your local setup must not be one of them.
 
----
-
-This setup step is intentionally boring and sometimes frustrating. This is what real cloud-native work looks like before the fun begins.
+> This setup step is intentionally boring and sometimes frustrating. This is what real cloud-native work looks like before the fun begins.
